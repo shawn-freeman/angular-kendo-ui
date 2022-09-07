@@ -484,6 +484,29 @@
     </kendo-dropdownlist>
   </div>
 
+  <div class="card-container">
+    <div class="example-config" >
+      <kendo-label
+        [for]="gaugeValue"
+        style=" position:absolute; padding-left: 80px; top:35px;"
+        text="Value"
+      ></kendo-label>
+      <kendo-slider
+        id="gaugeValue"
+        [min]="0"
+        [max]="100"
+        [smallStep]="1"
+        tickPlacement="none"
+        [(ngModel)]="gaugeValue"
+      ></kendo-slider>
+    </div>
+    <kendo-circulargauge [value]="gaugeValue" [scale]="{ max: 100 }">
+      <ng-template kendoCircularGaugeCenterTemplate let-value="gaugeValue">
+        {{ gaugeValue }}%
+      </ng-template>
+    </kendo-circulargauge>
+  </div>
+
   <!-- Footer -->
   <footer>
       Love Angular?&nbsp;

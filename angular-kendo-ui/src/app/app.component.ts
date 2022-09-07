@@ -25,6 +25,8 @@ export class AppComponent {
   public dropDownItems = categories;
   public defaultItem = { text: "Filter by Category", value: null as any };
 
+  public gaugeValue: number = 10;
+
   constructor(private service: ProductService){
     this.loadGridItems();
   }

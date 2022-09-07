@@ -6,6 +6,10 @@ import { AppComponent } from './app.component';
 import { GridModule } from '@progress/kendo-angular-grid';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DropDownsModule } from '@progress/kendo-angular-dropdowns';
+import { SliderModule } from '@progress/kendo-angular-inputs';
+import { GaugesModule } from '@progress/kendo-angular-gauges';
+import { FormsModule } from '@angular/forms';
+import { LabelModule } from '@progress/kendo-angular-label';
 
 
 
@@ -19,7 +23,11 @@ import { DropDownsModule } from '@progress/kendo-angular-dropdowns';
     AppRoutingModule,
     GridModule,
     BrowserAnimationsModule,
-    DropDownsModule
+    DropDownsModule,
+    SliderModule,
+    GaugesModule,
+    FormsModule,
+    LabelModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
