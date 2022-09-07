@@ -1,5 +1,7 @@
 var builder = WebApplication.CreateBuilder(args);
-
+builder.Services.AddCors(options => 
+    options.AddDefaultPolicy(builder => builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod())
+);
 // Add services to the container.
 
 builder.Services.AddControllers();
@@ -16,7 +18,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
+app.UseCors(policyBuilder => policyBuilder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
+
+//app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
