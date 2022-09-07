@@ -452,7 +452,7 @@
     </a>
   </div>
 
-  <div>
+  <div class="card-container">
     <kendo-grid
       [data]="gridItems | async"
       [pageSize]="pageSize"
@@ -460,7 +460,7 @@
       [pageable]="true"
       (pageChange)="pageChange($event)"
       [sortable]="true"
-      [sort]="sortDescriptor" (
+      [sort]="sortDescriptor"
       (sortChange)="handleSortChange($event)"
       [height]="400"
       >

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { GridDataResult, PageChangeEvent } from '@progress/kendo-angular-grid';
-import { SortDescriptor } from '@progress/kendo-data-query';
-import { Observable } from 'rxjs';
+import { DataResult, SortDescriptor } from '@progress/kendo-data-query';
+import { Observable, of } from 'rxjs';
 import { ProductService } from './product.service';
 
 @Component({
@@ -14,11 +14,11 @@ export class AppComponent {
   title = 'angular-kendo-ui';
 
   //demo properties
-  public gridItems: Observable<GridDataResult>;
+  public gridItems: Observable<GridDataResult> ;
   public pageSize: number = 10;
   public skip: number = 0;
   public sortDescriptor: SortDescriptor[] = [];
-  public filterTerm: number = null;
+  public filterTerm: number = 0;
 
   constructor(private service: ProductService){
     this.loadGridItems();
