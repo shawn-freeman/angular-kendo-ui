@@ -16,6 +16,7 @@ export class AppComponent {
 
   //grid demo properties
   public gridItems: Observable<GridDataResult> ;
+  public gridWeatherItems: Observable<GridDataResult> ;
   public pageSize: number = 10;
   public skip: number = 0;
   public sortDescriptor: SortDescriptor[] = [];
@@ -29,6 +30,7 @@ export class AppComponent {
 
   constructor(private service: ProductService){
     this.loadGridItems();
+    this.loadWeatherItems()
   }
 
   public pageChange(event: PageChangeEvent){
@@ -43,6 +45,15 @@ export class AppComponent {
 
   private loadGridItems():void{
     this.gridItems = this.service.getProducts(
+      this.skip,
+      this.pageSize,
+      this.sortDescriptor,
+      this.filterTerm
+    );
+  }
+
+  private loadWeatherItems():void{
+    this.gridWeatherItems = this.service.getExampleApiResult(
       this.skip,
       this.pageSize,
       this.sortDescriptor,

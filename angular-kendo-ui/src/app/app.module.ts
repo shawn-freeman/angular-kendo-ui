@@ -10,6 +10,7 @@ import { SliderModule } from '@progress/kendo-angular-inputs';
 import { GaugesModule } from '@progress/kendo-angular-gauges';
 import { FormsModule } from '@angular/forms';
 import { LabelModule } from '@progress/kendo-angular-label';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -28,6 +29,8 @@ import { LabelModule } from '@progress/kendo-angular-label';
     GaugesModule,
     FormsModule,
     LabelModule,
+    //Must be after browser module
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
